@@ -1,0 +1,466 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #080808;
+  color: #ffffff;
+}
+
+a {
+  text-decoration: none;
+}
+
+.pagina {
+  min-height: 100vh;
+  background: #080808;
+}
+
+.container {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+
+/* NAVBAR */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.9);
+  border-bottom: 1px solid #282828;
+  backdrop-filter: blur(10px);
+}
+
+.navbar-conteudo {
+  height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 27px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.logo span {
+  color: #ff6500;
+}
+
+nav {
+  display: flex;
+  gap: 32px;
+}
+
+nav a {
+  color: #cccccc;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+nav a:hover {
+  color: #ff6500;
+}
+
+
+/* HERO */
+
+.hero {
+  min-height: 680px;
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.95),
+      rgba(0, 0, 0, 0.45)
+    ),
+    url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee");
+
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-conteudo {
+  position: relative;
+  z-index: 2;
+  padding-top: 80px;
+}
+
+.hero-destaque {
+  color: #ff6500;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 5px;
+}
+
+.hero h1 {
+  max-width: 780px;
+  margin: 18px 0;
+  font-size: clamp(48px, 7vw, 88px);
+  line-height: 0.95;
+  letter-spacing: -3px;
+}
+
+.hero h1 span {
+  color: #ff6500;
+}
+
+.hero-texto {
+  max-width: 570px;
+  font-size: 19px;
+  color: #c8c8c8;
+  line-height: 1.7;
+}
+
+.botao-principal {
+  display: inline-block;
+  margin-top: 28px;
+  padding: 17px 27px;
+  border-radius: 10px;
+  background: #ff6500;
+  color: white;
+  font-weight: 800;
+  transition: 0.2s;
+}
+
+.botao-principal:hover {
+  background: #e75c00;
+  transform: translateY(-2px);
+}
+
+
+/* CALENDÁRIO */
+
+.calendario {
+  padding: 100px 0;
+}
+
+.titulo-secao {
+  margin-bottom: 45px;
+}
+
+.titulo-secao > p {
+  margin: 0;
+  color: #ff6500;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 4px;
+}
+
+.titulo-secao h2 {
+  margin: 10px 0;
+  font-size: clamp(38px, 5vw, 58px);
+}
+
+.titulo-secao > span {
+  color: #999999;
+  font-size: 17px;
+}
+
+.lista-trilhas {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.card-trilha {
+  min-height: 270px;
+  display: grid;
+  grid-template-columns: 125px 360px 1fr;
+  overflow: hidden;
+
+  background: #151515;
+  border: 1px solid #292929;
+  border-radius: 22px;
+
+  transition: 0.25s;
+}
+
+.card-trilha:hover {
+  border-color: #ff6500;
+  transform: translateY(-3px);
+}
+
+.data-trilha {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background: #0c0c0c;
+  border-right: 1px solid #292929;
+}
+
+.data-trilha .mes {
+  color: #ff6500;
+  font-weight: 900;
+  font-size: 15px;
+}
+
+.data-trilha strong {
+  margin: 4px 0;
+  font-size: 52px;
+  line-height: 1;
+}
+
+.data-trilha .ano {
+  color: #777777;
+  font-size: 13px;
+}
+
+.imagem-container {
+  overflow: hidden;
+  background: #101010;
+}
+
+.imagem-container img {
+  width: 100%;
+  height: 100%;
+  min-height: 270px;
+  object-fit: cover;
+  transition: 0.4s;
+}
+
+.card-trilha:hover .imagem-container img {
+  transform: scale(1.04);
+}
+
+.sem-imagem {
+  width: 100%;
+  height: 100%;
+  min-height: 270px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 60px;
+}
+
+.informacoes-trilha {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.badge {
+  width: fit-content;
+  background: #ff6500;
+  color: white;
+
+  padding: 6px 11px;
+  border-radius: 20px;
+
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.informacoes-trilha h3 {
+  margin: 14px 0;
+  font-size: 30px;
+}
+
+.detalhes {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.detalhes p {
+  margin: 0;
+  color: #aaaaaa;
+}
+
+.detalhes p span {
+  margin-right: 8px;
+}
+
+.botao-whatsapp {
+  width: fit-content;
+  margin-top: 22px;
+
+  padding: 13px 18px;
+
+  background: #16883a;
+  color: white;
+  border-radius: 9px;
+
+  font-weight: 800;
+
+  transition: 0.2s;
+}
+
+.botao-whatsapp:hover {
+  background: #1a9e45;
+}
+
+
+/* SEM EVENTOS / ERRO */
+
+.mensagem {
+  padding: 50px;
+
+  text-align: center;
+
+  background: #151515;
+  border: 1px solid #292929;
+  border-radius: 20px;
+
+  color: #999999;
+}
+
+.mensagem h3 {
+  color: white;
+  font-size: 26px;
+}
+
+.mensagem.erro {
+  border-color: #7d2525;
+}
+
+
+/* SOBRE */
+
+.sobre {
+  padding: 100px 0;
+  background: #111111;
+  border-top: 1px solid #252525;
+}
+
+.sobre-conteudo {
+  max-width: 800px;
+}
+
+.sobre-destaque {
+  color: #ff6500;
+  letter-spacing: 5px;
+  font-weight: 900;
+  font-size: 12px;
+}
+
+.sobre h2 {
+  margin: 10px 0 20px;
+  font-size: 52px;
+}
+
+.sobre p {
+  max-width: 680px;
+  color: #aaaaaa;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+
+/* FOOTER */
+
+.footer {
+  padding: 35px 0;
+  border-top: 1px solid #252525;
+  color: #777777;
+}
+
+.footer .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer strong {
+  color: white;
+  font-size: 20px;
+}
+
+.footer strong span {
+  color: #ff6500;
+}
+
+
+/* RESPONSIVO */
+
+@media (max-width: 850px) {
+  nav {
+    display: none;
+  }
+
+  .hero {
+    min-height: 620px;
+  }
+
+  .card-trilha {
+    grid-template-columns: 90px 1fr;
+  }
+
+  .imagem-container {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    height: 230px;
+  }
+
+  .data-trilha {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .informacoes-trilha {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .footer .container {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 550px) {
+  .container {
+    width: min(100% - 28px, 1180px);
+  }
+
+  .hero h1 {
+    letter-spacing: -2px;
+  }
+
+  .card-trilha {
+    display: block;
+  }
+
+  .imagem-container {
+    height: 210px;
+  }
+
+  .data-trilha {
+    flex-direction: row;
+    gap: 10px;
+    padding: 15px;
+    border-right: 0;
+    border-bottom: 1px solid #292929;
+  }
+
+  .data-trilha strong {
+    font-size: 28px;
+  }
+
+  .informacoes-trilha {
+    padding: 24px;
+  }
+
+  .informacoes-trilha h3 {
+    font-size: 25px;
+  }
+}
